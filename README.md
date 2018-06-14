@@ -77,3 +77,5 @@ Supported HTTP methods: POST or GET
 - **[<code>POST</code> /customerapi/shipping](Shipping/GetShippingMethod.md)** returns a list of available shipping methods
 
 
+# Make a consignment
+- **[<code>POST</code> /customerapi/consignment](Consignment/PostConsignment.md)** Post a consignment
