@@ -54,18 +54,18 @@ Request with customer id, api key (request key) and api salt (pairing key). Payp
 will response an “auth string” for Step 2.
 
 Reqeuest URL:
-http://freightdemo.payport.co.nz/customerapi/auth?customer_id=44&request_key=8c716e66396adbcf981bae49d250df94&timestamp=20170411122100
+http://freightdemo.payport.co.nz/customerapi/auth?customer_id=44&request_key=8c716e66396adbcf981bae49d250df94
 
 ## Required Parameters:
 * customer_id [Require, numeric only]
 * request_key [Require, AKA “api_key”]
-* timestamp [Require]
 
 “customer_id” refers to the Payport customer id.
 “request_key” refers to the api_key.
-“timestamp” refers to the current system timestamp(Format: yyyyMMddHHmmss).
-Payport only tolerate +/-600 seconds.
+
+auth_string will expire after 600 seconds, need to ask a new auth_string.
 Expected responses:
+
 JSON encoded string contains:
 * “request_id”
 * “auth_string”
