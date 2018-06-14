@@ -11,9 +11,9 @@ Request URL:
 http://freightdemo.payport.co.nz/customerapi/auth/request_api_info
 
 ## Required Parameters:
-* “username”[Compulsory]
-* “password”[Compulsory]
-* “trust_key” [Optional]
+* username [Require]
+* password [Require]
+* trust_key [Optional]
 
 “username” refers to the Payport customer login account name.
 “password” refers to the Payport login password.
@@ -26,9 +26,9 @@ Expected responses:
 
 JSON encoded string contains
 --------------------------------------- 
-* “customer_id”
-* “api_key”
-* “api_salt”
+* customer_id
+* api_key
+* api_salt
 ---------------------------------------
 Supported HTTP methods: POST or GET
 Example call in Postman
@@ -57,9 +57,9 @@ Reqeuest URL:
 http://freightdemo.payport.co.nz/customerapi/auth?customer_id=44&request_key=8c716e66396adbcf981bae49d250df94&timestamp=20170411122100
 
 ## Required Parameters:
-* “customer_id”[Compulsory, numeric only]
-* “request_key”[Compulsory, AKA “api_key”]
-* “timestamp” [Compulsory]
+* customer_id [Require, numeric only]
+* request_key [Require, AKA “api_key”]
+* timestamp [Require]
 
 “customer_id” refers to the Payport customer id.
 “request_key” refers to the api_key.
@@ -70,5 +70,10 @@ JSON encoded string contains:
 * “request_id”
 * “auth_string”
 Supported HTTP methods: POST or GET
+
+***
+
+# Shipping
+- **[<code>POST</code> /customerapi/shipping](shipping/getshippingmethod.md)** returns a list of available shipping methods
 
 
