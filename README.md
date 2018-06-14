@@ -9,7 +9,8 @@ Allows third-party systems to get Payport customers’ API authorization info (c
 
 Request URL:
 http://freightdemo.payport.co.nz/customerapi/auth/request_api_info
-Required Parameters:
+
+## Required Parameters:
 ---------------------------------------
 * “username”[Compulsory]
 * “password”[Compulsory]
@@ -23,6 +24,7 @@ automatically create api_key and api_salt for a customer who does not have any
 API request information. 
 
 Expected responses:
+
 JSON encoded string contains
 --------------------------------------- 
 * “customer_id”
@@ -31,6 +33,7 @@ JSON encoded string contains
 ---------------------------------------
 Supported HTTP methods: POST or GET
 Example call in Postman
+
 http://freightdemo.payport.co.nz/customerapi/auth/request_api_info?username=eva&password=xxxxxx&trust_key=123123joiuioadsfs1231231111
 
 Response:
