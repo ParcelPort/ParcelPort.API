@@ -44,7 +44,7 @@ Response:
 
 ***
 
-#Authentication
+# Authentication
 Getting API authentication from Payport is the prerequisite to carrying out each
 API request. The API authentication procedure includes two steps.
 Step 1. Request authentication string:
