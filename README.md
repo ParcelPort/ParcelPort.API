@@ -11,9 +11,9 @@ Request URL:
 http://freightdemo.payport.co.nz/customerapi/auth/request_api_info
 Required Parameters:
 ---------------------------------------
--“username”[Compulsory]
--“password”[Compulsory]
--“trust_key” [Optional]
+* “username”[Compulsory]
+* “password”[Compulsory]
+* “trust_key” [Optional]
 ---------------------------------------
 “username” refers to the Payport customer login account name.
 “password” refers to the Payport login password.
@@ -25,14 +25,14 @@ API request information.
 Expected responses:
 JSON encoded string contains
 --------------------------------------- 
--“customer_id”
--“api_key”
--“api_salt”
+* “customer_id”
+* “api_key”
+* “api_salt”
 ---------------------------------------
 Supported HTTP methods: POST or GET
 Example call in Postman
-http://freightdemo.payport.co.nz/customerapi/auth/request_api_info?username=eva&password=xxxxxx&
-trust_key=123123joiuioadsfs1231231111
+http://freightdemo.payport.co.nz/customerapi/auth/request_api_info?username=eva&password=xxxxxx&trust_key=123123joiuioadsfs1231231111
+
 Response:
 {
  "$id": "1",
