@@ -42,3 +42,32 @@ Response:
  "api_salt": "a70ffbabe6ae0645624bed2b16f35b13"
 } 
 
+***
+
+#Authentication
+Getting API authentication from Payport is the prerequisite to carrying out each
+API request. The API authentication procedure includes two steps.
+Step 1. Request authentication string:
+Request with customer id, api key (request key) and api salt (pairing key). Payport
+will response an “auth string” for Step 2.
+Reqeuest URL:
+http://freightdemo.payport.co.nz/customerapi/auth?customer_id=44&request_key=8c716e66396adbcf981bae49d250df94&timestamp=20170411122100
+Required Parameters:
+---------------------------------------
+* “customer_id”[Compulsory, numeric only]
+* “request_key”[Compulsory, AKA “api_key”]
+* “timestamp” [Compulsory]
+---------------------------------------
+“customer_id” refers to the Payport customer id.
+“request_key” refers to the api_key.
+“timestamp” refers to the current system timestamp(Format: yyyyMMddHHmmss).
+Payport only tolerate +/-600 seconds.
+Expected responses:
+JSON encoded string contains:
+--------------------------------------- 
+-“request_id”
+-“auth_string”
+---------------------------------------
+Supported HTTP methods: POST or GET
+
+
