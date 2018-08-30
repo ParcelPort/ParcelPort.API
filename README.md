@@ -4,72 +4,38 @@ Parcel Port API provides an access to enable your customer to send parcels using
 
 ***
 
-# Get api-key and api-salt
-Allows third-party systems to get Payport customers’ API authorization info (customer_id, api_key and api_salt) from Payport System.
+# Get token
+Allows third-party systems to get Payport customers’ API authorization token from Payport System.
 
 Request URL:
-http://freightdemo.payport.co.nz/customerapi/auth/request_api_info
+http://freightdemo.payport.co.nz/token
 
 ## Required Parameters:
 * username [Require]
 * password [Require]
-* trust_key [Optional]
+* grant_type [Optional]
 
-“username” refers to the Payport customer login account name.
-“password” refers to the Payport login password.
-“trust_key” refers to the trust keys given by Payport. Only the trustworthy
-customers of Payport can get trust keys. With a valid trust key, Payport system can
-automatically create api_key and api_salt for a customer who does not have any
-API request information. 
-
-Expected responses:
-
-JSON encoded string contains
---------------------------------------- 
-* customer_id
-* api_key
-* api_salt
----------------------------------------
-Supported HTTP methods: POST or GET
+Supported HTTP methods: POST
 Example call in Postman
 
-http://freightdemo.payport.co.nz/customerapi/auth/request_api_info?username=eva&password=xxxxxx&trust_key=123123joiuioadsfs1231231111
+http://freightdemo.payport.co.nz/token
+Content-Type: application/x-www-form-urlencoded
+Body:{
+    username:"Test"
+    password:"Password"
+    grant_type: "password"
+}
 
 Response:
 {
- "$id": "1",
- "success": 1,
- "customer_id": 44,
- "api_key": "8c716e66396adbcf981bae49d250df94",
- "api_salt": "a70ffbabe6ae0645624bed2b16f35b13"
+    "access_token": "U995BbNx_JQZPozAd6QZPBUc6M7PMwXQUMS_dU42IJ-bDd635VLC1q-ksDO2EnUCsJvo6hrFiiE_KkXcsDOguj1wISMudM45DTWNwE9E-4Ik0DdK6e-U-KU8CSdXyD8K0lJArHMpff7m1DWIV0OgBDY73S7w18P12ygXRZBcbiwkynQpKwDgR6WzQouTmSOoXcwYajV8aDo7fKNqyDn32n7hY79ADz8-yfRUK_f7_ynIvvyuoJI43NsFNy46d4YYjD9zyU-rz0tu-kTVkWfq4zVT3msOfiMZCSkCPgUuOeXvglsf-iyktWZZRAg4p1cEVVc3-Wo0wRuuMwqoA0Dx_Q",
+    "token_type": "bearer",
+    "expires_in": 1799,
+    "client_id": "187",
+    "userName": "saintsco",
+    ".issued": "Thu, 30 Aug 2018 23:31:53 GMT",
+    ".expires": "Fri, 31 Aug 2018 00:01:53 GMT"
 } 
-
-***
-
-# Authentication
-Getting API authentication from Payport is the prerequisite to carrying out each
-API request. The API authentication procedure includes two steps.
-Step 1. Request authentication string:
-Request with customer id, api key (request key) and api salt (pairing key). Payport
-will response an “auth string” for Step 2.
-
-Reqeuest URL:
-http://freightdemo.payport.co.nz/customerapi/auth?customer_id=44&request_key=8c716e66396adbcf981bae49d250df94
-
-## Required Parameters:
-* customer_id [Require, numeric only]
-* request_key [Require, AKA “api_key”]
-
-“customer_id” refers to the Payport customer id.
-“request_key” refers to the api_key.
-
-auth_string will expire after 600 seconds, need to ask a new auth_string.
-Expected responses:
-
-JSON encoded string contains:
-* “request_id”
-* “auth_string”
-Supported HTTP methods: POST or GET
 
 ***
 
