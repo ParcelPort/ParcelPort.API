@@ -18,7 +18,6 @@ http://api.parcelport.co.nz/token
 Supported HTTP methods: POST
 Example call in Postman
 
-http://freightdemo.payport.co.nz/token
 Content-Type: application/x-www-form-urlencoded
 Body:{
     username:"Test"
