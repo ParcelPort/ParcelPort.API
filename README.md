@@ -8,7 +8,7 @@ Parcel Port API provides an access to enable your customer to send parcels using
 Allows third-party systems to get Payport customers’ API authorization token from Payport System.
 
 Request URL:
-http://freightdemo.payport.co.nz/token
+http://api.parcelport.co.nz/token
 
 ## Required Parameters:
 * username [Require]
@@ -40,8 +40,13 @@ Response:
 ***
 
 # Shipping
-- **[<code>POST</code> /customerapi/shipping](Shipping/GetShippingMethod.md)** returns a list of available shipping methods
-
+- **[<code>POST</code> /api/shippingoptions](Shipping/GetShippingMethod.md)** returns a list of available shipping methods
 
 # Make a consignment
-- **[<code>POST</code> /customerapi/consignment](Consignment/PostConsignment.md)** Post a consignment
+- **[<code>POST</code> /api/consignment](Consignment/PostConsignment.md)** Post a consignment
+
+# Label
+- **[<code>GET</code> /api/labels](Label/GetLabel.md)** Post a consignment
+
+# Booking
+- **[<code>GET</code> /api/bookings](Booking/GetBooking.md)** Post a consignment
