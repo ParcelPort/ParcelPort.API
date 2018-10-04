@@ -3,7 +3,7 @@
 Allows third-party systems to get a list of applicable shipping methods based on
 the passed send address, recipient address and parcel(s)’ dimensions.
 
-URL: http://api.parcelport.co.nz/api/shippingoptions?client_id=110
+URL: http://api.parcelport.co.nz/api/1.0/shippingoptions?client_id=110
 
 *This API can only be called after the API authentication is approved (the correct
 auth string has been passed).

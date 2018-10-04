@@ -5,7 +5,7 @@ Parcel Port API provides an access to enable your customer to send parcels using
 ***
 
 # Get token
-Allows third-party systems to get Payport customers’ API authorization token from Payport System.
+Allows third-party systems to get Payport customers’ API authorization token from Payport System. The token will expire in 30Mins
 
 Request URL:
 http://api.parcelport.co.nz/token
@@ -39,13 +39,16 @@ Response:
 ***
 
 # Shipping
-- **[<code>POST</code> /api/shippingoptions](Shipping/GetShippingMethod.md)** returns a list of available shipping methods
+- **[<code>POST</code> /api/1.0/shippingoptions](Shipping/GetShippingMethod.md)** returns a list of available shipping methods
 
 # Make a consignment
-- **[<code>POST</code> /api/consignment](Consignment/PostConsignment.md)** Post a consignment
+- **[<code>POST</code> /api/1.0/consignment](Consignment/PostConsignment.md)** Post a consignment
 
 # Label
-- **[<code>GET</code> /api/labels](Label/GetLabel.md)** Post a consignment
+- **[<code>GET</code> /api/1.0/labels](Label/GetLabel.md)** Get a url of label(PDF)
 
 # Booking
-- **[<code>GET</code> /api/bookings](Booking/GetBooking.md)** Post a consignment
+- **[<code>GET</code> /api/1.0/bookings](Booking/GetBooking.md)** Booking a pickup time
+
+# Tracking
+- **[<code>GET</code> /api/1.0/tracking](Tracking/GetTracking.md)** Get tracking history of the consignment
