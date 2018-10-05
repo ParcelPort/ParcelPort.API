@@ -4,11 +4,14 @@ Parcel Port API provides an access to enable your customer to send parcels using
 
 ***
 
+Live URL: https://api.parcelport.co.nz
+Test URL: https://apitest.parcelport.co.nz
+
 # Get token
 Allows third-party systems to get Payport customers’ API authorization token from Payport System. The token will expire in 30Mins
 
 Request URL:
-http://api.parcelport.co.nz/token
+https://api.parcelport.co.nz/token
 
 ## Required Parameters:
 * username [Require]
