@@ -21,10 +21,10 @@ auth string has been passed).
 - **insured_value_amount** - [Require if International, insured value]
 - **currency** - [Require if International, insured value currency]
 - **parcel_contents** [Optional for Internation]
-  -**description** - [Optional description of your products]
-  -**quantity** - [Optional quantity of your products]
-  -**weight** - [Optional weight of your products]
-  -**value** - [Optional value of your products]
+  - **description** - [Optional description of your products]
+  - **quantity** - [Optional quantity of your products]
+  - **weight** - [Optional weight of your products]
+  - **value** - [Optional value of your products]
 
 *PickupAddress*
 - **address_body** [Require, unit number + street number + street name]
