@@ -36,7 +36,7 @@ auth string has been passed).
   - **weight** - [Optional weight of your products]
   - **value** - [Optional value of your products]
 
-  *PickupAddress*
+*PickupAddress*
 - **address_body** [Require, unit number + street number + street name]
 - **address_city** [Require, city]
 - **address_country** [Require, country code, e.g., "NZ" for NewZealand]
