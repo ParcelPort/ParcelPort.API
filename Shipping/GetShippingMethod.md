@@ -230,7 +230,7 @@ The requestID need add in the request when you create a consignment, and it will
         },
     ]
 }
-``` json
+```
 
 ***
 
