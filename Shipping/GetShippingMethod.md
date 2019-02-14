@@ -1,7 +1,7 @@
 #  Get available shipping methods
 
 Allows third-party systems to get a list of applicable shipping methods based on
-the passed send address, recipient address and parcel(s)’ dimensions.
+the passed sender's address, recipient's address and parcel(s)’ dimensions.
 
 URL: https://api.parcelport.co.nz/api/1.0/shippingoptions?client_id=110
 
