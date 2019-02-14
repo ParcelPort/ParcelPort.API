@@ -1,7 +1,7 @@
 # Make consignment / Get consignment tracking number
 
 Allows third-party systems to make consignments and get consignment tracking
-numbers based on the passed shipping method id, send address, recipient address
+numbers based on the passed shipping method id, sender's address, recipient's address
 and parcel(s)’ dimensions. 
 
 URL: https://api.parcelport.co.nz/api/1.0/consignment?client_id=110
@@ -10,69 +10,131 @@ URL: https://api.parcelport.co.nz/api/1.0/consignment?client_id=110
 auth string has been passed). 
 
 ## Required Parameters:
-* carrier_method_id [Require, e.g. "phms"]
-* carrier_method_code [Require, e.g. "MS"]
+* carrier_id [Optional, value from quotes e.g. "ph"]
+* carrier_method_id [Require, value from quotes e.g. "phms"]
+* carrier_method_code [Require, value from quotes e.g. "MS"]
+* QuoteRequestID [Require, value from quotes]
+* authority_to_leave [Optional, 0 or 1, 1 if authority to leave]
+* pickup_option [Require, 0 or 1, 0 if booking now]
+* is_signature [Optional depend on Carrier's quotes, 0 or 1, 1 if need signature]
+* email_to_recipient [Require, 0 or 1, 1 if email to recipient]
 
-* DeliveryAddress_company_name [Optional, recipient's company name]
-* DeliveryAddress_contact_name [Require, recipient's contact name]
-* DeliveryAddress_phone [Require, recipient's phone]
-* DeliveryAddress_building [Optional, recipient's building]
-* DeliveryAddress_address_body [Require, recipient's address– street and numbers]
-* DeliveryAddress_suburb [Require, recipient's suburb]
-* DeliveryAddress_city [Require, recipient's city]
-* DeliveryAddress_postcode [Require, recipient's postcode]
-* DeliveryAddress_country_code [Require, recipient's country, e.g., "NZ" for NewZealand]
-* DeliveryAddress_instruction [Require if "authority_to_leave" is set]
-* DeliveryAddress_email [Optional, recipient's email]
+*Parcels*
+- **length** - [Require Length of the parcel]
+- **width** - [Require Width of the parcel]
+- **height** - [Require Length of the parcel]
+- **volumn** - [Optional Volumn of the parcel]
+- **kind** - [Optional default is 0, 1 if using satchel]
+- **group_id** - [Optional add the satchel code if using satchel]
+- **cust_ref** - [Optional reference of the item]
+- **insurance_required** - [Require if International, true / false]
+- **insured_value_amount** - [Require if International, insured value]
+- **currency** - [Require if International, insured value currency]
+- **parcel_contents** [Optional for Internation]
+  - **description** - [Optional description of your products]
+  - **quantity** - [Optional quantity of your products]
+  - **weight** - [Optional weight of your products]
+  - **value** - [Optional value of your products]
 
-* PickupAddress_company_name [Optional, recipient's company name]
-* PickupAddress_contact_name [Require, recipient's contact name]
-* PickupAddress_phone [Require, recipient's phone]
-* PickupAddress_building [Optional, recipient's building]
-* PickupAddress_address_body [Require, recipient's address– street and numbers]
-* PickupAddress_suburb [Require, recipient's suburb]
-* PickupAddress_city [Require, recipient's city]
-* PickupAddress_postcode [Require, recipient's postcode]
-* PickupAddress_country_code [Require, recipient's country, e.g., "NZ" for NewZealand]
-* PickupAddress_instruction [Require if "authority_to_leave" is set]
-* PickupAddress_email [Optional, recipient's email]
+  *PickupAddress*
+- **address_body** [Require, unit number + street number + street name]
+- **address_city** [Require, city]
+- **address_country** [Require, country code, e.g., "NZ" for NewZealand]
+- **address_postcode** [Require, postcode]
+- **address_number** [Require, street number]
+- **address_street** [Require, street name]
+- **address_suburb** [Require, suburb]
+- **email** [Optional, email]
+- **company_name** [Optional, company name]
+- **contact_name** [Optional, contact name]
+- **phone** [Require if International, phone]
+- **instruction** [Optional, instruction]
 
-* carrier_id [Optional]
-* carrier_method_id [Require, e.g., "CPOLP" For Courier post]
-* carrier_method_code [Require, e.g., "CPOLP" For Courier post]
-* consignment_name [Require, DateTime + clientID, e.g., "20180830154322-187"]
-* pickup_option [Require, numeric only, 0 or 1]
-* is_saturday [Require, numeric only, 0 or 1]
-* email_to_recipient [Require, numeric only, 0 or 1]
-* is_signature [Require, numeric only, 0 or 1]
-* QuoteRequestID [Require, For Get quotes response]
-* authority_to_leave [Optional, numeric only, 0 or 1]
+*DeliveryAddress*
+- **address_body** [Require, unit number + street number + street name]
+- **address_city** [Require, city]
+- **address_country** [Require, country code, e.g., "NZ" for NewZealand]
+- **address_postcode** [Require, postcode]
+- **address_number** [Require, street number]
+- **address_street** [Require, street name]
+- **address_suburb** [Require, suburb]
+- **email** [Optional, email]
+- **company_name** [Optional, company name]
+- **contact_name** [Optional, contact name]
+- **phone** [Optional, phone]
+- **instruction** [Optional, instruction]
 
-* parcel [Require, parcel list, JSON encoded string only]
+*Parcelport satchel list*
+<table>
+  <tr>
+    <td>Satchel name</td>
+    <td>code</td>
+  </tr>
+  <tr>
+    <td>Satchel 140x230 DLE Letter Size</td>
+    <td>dle</td>
+  </tr>
+  <tr>
+    <td>Satchel 150x210 Small A5 Size</td>
+    <td>a5</td>
+  </tr>
+  <tr>
+    <td>Satchel Small A5 Bubble</td>
+    <td>a5b</td>
+  </tr>
+  <tr>
+    <td>Satchel 210x297 A4 Size</td>
+    <td>a4</td>
+  </tr>
+  <tr>
+    <td>Satchel A4 Bubble</td>
+    <td>a4b</td>
+  </tr>
+  <tr>
+    <td>Satchel 280x350 Medium Size</td>
+    <td>med</td>
+  </tr>
+  <tr>
+    <td>Satchel Medium Bubble</td>
+    <td>medb</td>
+  </tr>
+  <tr>
+    <td>Satchel 297x420 Large A3 Size</td>
+    <td>a3</td>
+  </tr>
+  <tr>
+    <td>Satchel 450x450 Extra Large A2 Size</td>
+    <td>xl</td>
+  </tr>
+</table>
 
-Expected responses:
-A JSON encoded string contains the tracking number of the consignment and
-tracking Link
+## Example
+Request
+PUT https://api.parcelport.co.nz/api/1.0/consignment?client_id=110
 
-Supported HTTP methods: POST
+**Headers**
+Content-Type: application/json;
 
+**Authorization**
+Bearer:bSEX9PltRH8uoHLmFdnt115OqEPPQTrrHpht6Bwq0yos9EW7o6vcBtrV23AF2TcuA8FJTabH_t9x2hDo_tP840QIXfUmg0AGmRBfRHfeTeCjBGrK4ezMuLQ0jsyoDAb3cxUhkMniuJHYfSWhKlvyuQZPDqAffr4ggCY9qiojTgRm1s-EubJZK941SrtXBmTQKnkAWcru5MmXQvm0ziNAfZ_JhCKGoNHhpmnJVfQvGYMQNjMRknoE6GZl63GFZZ9tjMz2ICBPqEJsX67fWOoB2adbr58hA72omCMgLaX-1-DhYjlEnb_qhGljklPL3Qo6ohgykA
+
+**Body**
+``` json
 {
   "authority_to_leave": 0,
-  "carrier_id": "NCP",
-  "carrier_method_id": "CPOLP",
-  "carrier_method_code": "CPOLP",
-  "parcels": [
+  "carrier_id": "ph",
+  "carrier_method_id": "phtd",
+  "carrier_method_code": "TD",
+  "pickup_option": 1,
+  "email_to_recipient": 1,
+  "is_signature": 1,
+  "QuoteRequestID": "ab98ccf7-655f-4e53-af99-395c65c962b3",
+   "parcels": [
     {
       "length": 1,
       "height": 1,
       "width": 1,
-      "volume": 0.001,
       "weight": 1,
-      "kind": 0,
-      "insurance_required": false,
-      "currency": "NZD",
-      "content_number": 31,
-      "document_flag": 0
     }
   ],
   "DeliveryAddress": {
@@ -90,8 +152,7 @@ Supported HTTP methods: POST
     "address_suburb": "Burnside"
   },
   "PickupAddress": {
-    "address_body": "512 Queen Street",
-    "address_id": 26422,
+    "address_body": "12 Pitt Street",
     "address_city": "Auckland",
     "company_name": "Test",
     "contact_name": "Test Jimmy",
@@ -101,17 +162,30 @@ Supported HTTP methods: POST
     "phone": 1234343,
     "address_postcode": 1010,
     "address_number": "4512",
-    "address_street": "Queen Street",
-    "address_suburb": "Auckland"
+    "address_street": "Pitt Street",
+    "address_suburb": "Auckland Central"
   },
-  "is_saturday": 0,
-  "channel": 0,
-  "document_flag": 0,
-  "consignment_name": "20180830154322-187",
-  "pickup_option": 1,
-  "allow_return": 0,
-  "email_to_recipient": 1,
-  "is_signature": 1,
-  "undeliverable_instructions": 1,
-  "QuoteRequestID": "09aa49c3-2fbc-45f7-808a-3e77f0e790eb"
 }
+```
+**Responses**
+A JSON encoded string contains all the valid shipping methods with shipping method ids.
+The requestID need to be added in the request when you create a consignment, and it will be expired.
+
+``` json
+{
+    "message": "",
+    "isSuccess": true,
+    "errorMessages": {},
+    "consignmentRef": [
+        "007860396061"
+    ],
+    "consignmentLocalIDs": [
+        396061
+    ],
+    "consignmentRefEncode": [
+        "SqzdUGp2YsOsMgN3e9WEBw=="
+    ]
+}
+```
+
+***
