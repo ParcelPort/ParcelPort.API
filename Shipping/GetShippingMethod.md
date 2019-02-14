@@ -90,7 +90,7 @@ auth string has been passed).
 
 ## Example
 *Request*
-https://api.parcelport.co.nz/api/1.0/shippingoptions?client_id=110
+POST https://api.parcelport.co.nz/api/1.0/shippingoptions?client_id=110
 
 *Headers*
 Content-Type: application/json;
@@ -133,7 +133,7 @@ Expected responses:
 A JSON encoded string contains all the valid shipping methods with shipping method ids.
 The requestID need add in the request when you create a consignment, and it will expire.
 
-Supported HTTP methods: POST
+``` json
 {
     "errorMessage": null,
     "requestID": "9552255a-05b7-4c7e-81ea-4eff2f0caae1",
@@ -230,7 +230,7 @@ Supported HTTP methods: POST
         },
     ]
 }
-
+``` json
 
 ***
 
