@@ -45,7 +45,7 @@ Response:
 - **[<code>POST</code> /api/1.0/shippingoptions](Shipping/GetShippingMethod.md)** returns a list of available shipping methods
 
 # Make a consignment
-- **[<code>POST</code> /api/1.0/consignment](Consignment/PostConsignment.md)** Post a consignment
+- **[<code>PUT</code> /api/1.0/consignment](Consignment/PostConsignment.md)** Post a consignment
 
 # Label
 - **[<code>GET</code> /api/1.0/labels](Label/GetLabel.md)** Get a url of label(PDF)
