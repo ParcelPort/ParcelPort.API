@@ -89,7 +89,7 @@ auth string has been passed).
 </table>
 
 ## Example
-*Request*
+Request
 POST https://api.parcelport.co.nz/api/1.0/shippingoptions?client_id=110
 
 *Headers*
