@@ -9,93 +9,225 @@ URL: https://api.parcelport.co.nz/api/1.0/shippingoptions?client_id=110
 auth string has been passed).
 
 ## Required Parameters:
-* DeliveryAddress_company_name [Optional, recipient's company name]
-* DeliveryAddress_contact_name [Require, recipient's contact name]
-* DeliveryAddress_phone [Require, recipient's phone]
-* DeliveryAddress_building [Optional, recipient's building]
-* DeliveryAddress_address_body [Require, recipient's address– street and numbers]
-* DeliveryAddress_suburb [Require, recipient's suburb]
-* DeliveryAddress_city [Require, recipient's city]
-* DeliveryAddress_postcode [Require, recipient's postcode]
-* DeliveryAddress_country_code [Require, recipient's country, e.g., "NZ" for NewZealand]
-* DeliveryAddress_instruction [Require if "authority_to_leave" is set]
-* DeliveryAddress_email [Optional, recipient's email]
+*Parcels*
+- **length** - [Require Length of the parcel]
+- **width** - [Require Width of the parcel]
+- **height** - [Require Length of the parcel]
+- **volumn** - [Optional Volumn of the parcel]
+- **kind** - [Optional default is 0, 1 if using satchel]
+- **group_id** - [Optional add the satchel code if using satchel]
+- **cust_ref** - [Optional reference of the item]
+- **insurance_required** - [Require if International, true / false]
+- **insured_value_amount** - [Require if International, insured value]
+- **currency** - [Require if International, insured value currency]
+- **parcel_contents** [Optional for Internation]
+  -**description** - [Optional description of your products]
+  -**quantity** - [Optional quantity of your products]
+  -**weight** - [Optional weight of your products]
+  -**value** - [Optional value of your products]
 
-* PickupAddress_company_name [Optional, recipient's company name]
-* PickupAddress_contact_name [Require, recipient's contact name]
-* PickupAddress_phone [Require, recipient's phone]
-* PickupAddress_building [Optional, recipient's building]
-* PickupAddress_address_body [Require, recipient's address– street and numbers]
-* PickupAddress_suburb [Require, recipient's suburb]
-* PickupAddress_city [Require, recipient's city]
-* PickupAddress_postcode [Require, recipient's postcode]
-* PickupAddress_country_code [Require, recipient's country, e.g., "NZ" for NewZealand]
-* PickupAddress_instruction [Require if "authority_to_leave" is set]
-* PickupAddress_email [Optional, recipient's email]
+*PickupAddress*
+- **address_body** [Require, unit number + street number + street name]
+- **address_city** [Require, city]
+- **address_country** [Require, country code, e.g., "NZ" for NewZealand]
+- **address_postcode** [Require, postcode]
+- **address_number** [Require, street number]
+- **address_street** [Require, street name]
+- **address_suburb** [Require, suburb]
 
-* parcel [Require, parcel list, JSON encoded string only]
-* authority_to_leave [Optional, numeric only, 0 or 1]
+*DeliveryAddress*
+- **address_body** [Require, unit number + street number + street name]
+- **address_city** [Require, city]
+- **address_country** [Require, country code, e.g., "NZ" for NewZealand]
+- **address_postcode** [Require, postcode]
+- **address_number** [Require, street number]
+- **address_street** [Require, street name]
+- **address_suburb** [Require, suburb]
 
-*The parcel detail include “volume”, “weight”, “cust_ref” customer reference.
-To create a JSON encoded parcel string, the following json string can be taken as a
-reference: 
-[{"cust_ref":"ref1","volume":0.01,"weight":0.05},{"cust_ref":"ref2","volume"
-:0.004,"weight":1}]
+*Parcelport satchel list*
+<table>
+  <tr>
+    <td>Satchel name</td>
+    <td>code</td>
+  </tr>
+  <tr>
+    <td>Satchel 140x230 DLE Letter Size</td>
+    <td>dle</td>
+  </tr>
+  <tr>
+    <td>Satchel 150x210 Small A5 Size</td>
+    <td>a5</td>
+  </tr>
+  <tr>
+    <td>Satchel Small A5 Bubble</td>
+    <td>a5b</td>
+  </tr>
+  <tr>
+    <td>Satchel 210x297 A4 Size</td>
+    <td>a4</td>
+  </tr>
+  <tr>
+    <td>Satchel A4 Bubble</td>
+    <td>a4b</td>
+  </tr>
+  <tr>
+    <td>Satchel 280x350 Medium Size</td>
+    <td>med</td>
+  </tr>
+  <tr>
+    <td>Satchel Medium Bubble</td>
+    <td>medb</td>
+  </tr>
+  <tr>
+    <td>Satchel 297x420 Large A3 Size</td>
+    <td>a3</td>
+  </tr>
+  <tr>
+    <td>Satchel 450x450 Extra Large A2 Size</td>
+    <td>xl</td>
+  </tr>
+</table>
 
-Expected responses:
-A JSON encoded string contains all the valid shipping methods with shipping method ids.
+## Example
+*Request*
+https://api.parcelport.co.nz/api/1.0/shippingoptions?client_id=110
 
-Supported HTTP methods: POST
+*Headers*
+Content-Type: application/json;
+
+*Authorization*
+Bearer:bSEX9PltRH8uoHLmFdnt115OqEPPQTrrHpht6Bwq0yos9EW7o6vcBtrV23AF2TcuA8FJTabH_t9x2hDo_tP840QIXfUmg0AGmRBfRHfeTeCjBGrK4ezMuLQ0jsyoDAb3cxUhkMniuJHYfSWhKlvyuQZPDqAffr4ggCY9qiojTgRm1s-EubJZK941SrtXBmTQKnkAWcru5MmXQvm0ziNAfZ_JhCKGoNHhpmnJVfQvGYMQNjMRknoE6GZl63GFZZ9tjMz2ICBPqEJsX67fWOoB2adbr58hA72omCMgLaX-1-DhYjlEnb_qhGljklPL3Qo6ohgykA
+
+*Body*
 {
-  "authority_to_leave": 0,
-  "carrier_id": null,
-  "carrier_method_id": null,
-  "carrier_method_code": "parcels",
   "parcels": [
     {
       "length": 1,
       "height": 1,
       "width": 1,
-      "volume": 0.001,
       "weight": 1,
-      "kind": 0,
-      "insurance_required": false,
-      "currency": "NZD",
-      "content_number": 31,
-      "document_flag": 0
     }
   ],
   "DeliveryAddress": {
     "address_body": "17 Witbrock Cresent",
     "address_city": "Christchurch",
-    "company_name": "Test",
-    "contact_name": "Test Tony",
     "address_country": "NZ",
-    "email": "187@parcelport.co.nz",
-    "instruction": "TEST",
-    "phone": 1234343,
     "address_postcode": 8053,
     "address_number": "17",
     "address_street": "Witbrock Crescent",
     "address_suburb": "Burnside"
   },
   "PickupAddress": {
-    "address_body": "512 Queen Street",
-    "address_id": 26422,
+    "address_body": "12 Pitt Street",
     "address_city": "Auckland",
-    "company_name": "Test",
-    "contact_name": "Test Jimmy",
     "address_country": "NZ",
-    "email": "187@parcelport.co.nz",
-    "instruction": "TEST",
-    "phone": 1234343,
     "address_postcode": 1010,
-    "address_number": "4512",
-    "address_street": "Queen Street",
-    "address_suburb": "Auckland"
+    "address_number": "12",
+    "address_street": "Pitt Street",
+    "address_suburb": "Auckland Central"
   },
-  "is_saturday": 0,
-  "channel": 0
+}
+
+Expected responses:
+A JSON encoded string contains all the valid shipping methods with shipping method ids.
+The requestID need add in the request when you create a consignment, and it will expire.
+
+Supported HTTP methods: POST
+{
+    "errorMessage": null,
+    "requestID": "9552255a-05b7-4c7e-81ea-4eff2f0caae1",
+    "expiryDate": "2019-02-15T14:46:31.6321973+13:00",
+    "errors": {},
+    "quotes": [
+        {
+            "quoteType": {
+                "code": "D",
+                "description": "Direct - Non Stop"
+            },
+            "quoteDetails": [
+                {
+                    "type": {
+                        "code": "None",
+                        "kind": "0",
+                        "description": "None",
+                        "sequence": null
+                    },
+                    "quote": {
+                        "carrier_id": "ph",
+                        "carrier_method_code": "TD",
+                        "carrier_method_id": "phtd",
+                        "carrier_method_name": "Own Packaging InterIsland 2 Days",
+                        "carrier_method_notesHtml": "<ul>\r\n<li>Two-day delivery between Islands</li>\r\n<li>Delivery Standard -&nbsp;Economy 2 day option between islands</li>\r\n<li>FREE Insurance covers up to $2000</li>\r\n</ul>",
+                        "carrier_method_desc": "Two Day Inter Island",
+                        "carrier_name": "Post Haste",
+                        "is_signature": null,
+                        "min_delivery_target": null,
+                        "max_delivery_target": null,
+                        "price_satchel": 0,
+                        "packageDetails": {
+                            "kind": null,
+                            "price_net": 5.67,
+                            "price_rural": 0,
+                            "price_sat": 0,
+                            "price_sig": 0,
+                            "addOnPrice_Sig": 0,
+                            "addOns": [
+                                {
+                                    "type": 0,
+                                    "code": "phtd",
+                                    "name": "Own Packaging InterIsland 2 Days",
+                                    "description": "<ul>\r\n<li>Two-day delivery between Islands</li>\r\n<li>Delivery Standard -&nbsp;Economy 2 day option between islands</li>\r\n<li>FREE Insurance covers up to $2000</li>\r\n</ul>",
+                                    "price": 5.67,
+                                    "gstPrice": 0.85
+                                },
+                                {
+                                    "type": 5,
+                                    "code": "phfaf",
+                                    "name": "Fuel Adjustment Factor",
+                                    "description": "<p>The Fuel Adjustment Factor (FAF) is a charge to Domestic and International Courier Services to off-set the current fuel volatility.&nbsp;</p>",
+                                    "price": 0,
+                                    "gstPrice": 0
+                                },
+                                {
+                                    "type": 5,
+                                    "code": "phruc",
+                                    "name": "Road User Charge RUC",
+                                    "description": "<p>Governmet Road User Charge</p>\r\n<p>Since 2007 the government have implemented increases in road user charges every year except 2011.<br /><br /> On the 18th December 2012 the Transport Minister, Gerry Brownlee, announced that road user charges will be increased on the 1st July each year until 2016 to contribute to the cost of the Roads of National Significance programme. There are seven roads of national significance some of which have not started yet so it is reasonable to assume that the government may continue to fund these projects via road user increases past July 2016. <br /><br />This surcharge will be operating separately from our existing fuel surcharge and be applied to the base price independently.</p>",
+                                    "price": 0.25,
+                                    "gstPrice": 0.04
+                                }
+                            ],
+                            "total_price": 5.92,
+                            "total_tax": 0.89,
+                            "price": 5.67
+                        },
+                        "items": [
+                            {
+                                "pc": 1,
+                                "volume": 0,
+                                "weight": 1,
+                                "kind": null,
+                                "group_id": null,
+                                "cust_ref": null,
+                                "pack_name": null,
+                                "cost_net": 4.23,
+                                "cost_rural": 0,
+                                "cost_sat": 0,
+                                "cost_sig": 0,
+                                "cost": 4.23
+                            }
+                        ],
+                        "insurance": 2000,
+                        "tracking_included": "1",
+                        "signature_included": "1",
+                        "interchangeBrachCode": null,
+                        "interchangeType": 0,
+                        "interchangeAddress": null
+                    }
+                }
+            ]
+        },
+    ]
 }
 
 
