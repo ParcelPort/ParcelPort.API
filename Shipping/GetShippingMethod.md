@@ -92,13 +92,13 @@ auth string has been passed).
 Request
 POST https://api.parcelport.co.nz/api/1.0/shippingoptions?client_id=110
 
-*Headers*
+**Headers**
 Content-Type: application/json;
 
-*Authorization*
+**Authorization**
 Bearer:bSEX9PltRH8uoHLmFdnt115OqEPPQTrrHpht6Bwq0yos9EW7o6vcBtrV23AF2TcuA8FJTabH_t9x2hDo_tP840QIXfUmg0AGmRBfRHfeTeCjBGrK4ezMuLQ0jsyoDAb3cxUhkMniuJHYfSWhKlvyuQZPDqAffr4ggCY9qiojTgRm1s-EubJZK941SrtXBmTQKnkAWcru5MmXQvm0ziNAfZ_JhCKGoNHhpmnJVfQvGYMQNjMRknoE6GZl63GFZZ9tjMz2ICBPqEJsX67fWOoB2adbr58hA72omCMgLaX-1-DhYjlEnb_qhGljklPL3Qo6ohgykA
 
-*Body*
+**Body**
 ``` json
 {
   "parcels": [
@@ -129,7 +129,7 @@ Bearer:bSEX9PltRH8uoHLmFdnt115OqEPPQTrrHpht6Bwq0yos9EW7o6vcBtrV23AF2TcuA8FJTabH_
   },
 }
 ```
-*Responses*
+**Responses**
 A JSON encoded string contains all the valid shipping methods with shipping method ids.
 The requestID need to be added in the request when you create a consignment, and it will be expired.
 
