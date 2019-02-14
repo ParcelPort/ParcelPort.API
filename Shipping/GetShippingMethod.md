@@ -129,9 +129,9 @@ Bearer:bSEX9PltRH8uoHLmFdnt115OqEPPQTrrHpht6Bwq0yos9EW7o6vcBtrV23AF2TcuA8FJTabH_
   },
 }
 ```
-Expected responses:
+*Responses*
 A JSON encoded string contains all the valid shipping methods with shipping method ids.
-The requestID need add in the request when you create a consignment, and it will expire.
+The requestID need to be added in the request when you create a consignment, and it will be expired.
 
 ``` json
 {
