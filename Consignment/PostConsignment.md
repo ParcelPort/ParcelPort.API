@@ -29,12 +29,12 @@ auth string has been passed).
 - **cust_ref** - [Optional reference of the item]
 - **insurance_required** - [Require if International, true / false]
 - **insured_value_amount** - [Require if International, insured value]
-- **currency** - [Require if International, insured value currency]
-- **parcel_contents** [Optional for Internation]
-  - **description** - [Optional description of your products]
-  - **quantity** - [Optional quantity of your products]
-  - **weight** - [Optional weight of your products]
-  - **value** - [Optional value of your products]
+- **currency** - [Optional, Default NZD, insured value currency]
+- **parcel_contents** [Require if International]
+  - **description** - [Require if International, description of your products]
+  - **quantity** - [Require if International, quantity of your products]
+  - **weight** - [Require if International, weight of your products]
+  - **value** - [Require if International, value of your products]
 
 *PickupAddress*
 - **address_body** [Require, unit number + street number + street name]
@@ -47,7 +47,7 @@ auth string has been passed).
 - **email** [Optional, email]
 - **company_name** [Optional, company name]
 - **contact_name** [Optional, contact name]
-- **phone** [Require if International, phone]
+- **phone** [Optional, contact phone]
 - **instruction** [Optional, instruction]
 
 *DeliveryAddress*
@@ -61,7 +61,7 @@ auth string has been passed).
 - **email** [Optional, email]
 - **company_name** [Optional, company name]
 - **contact_name** [Optional, contact name]
-- **phone** [Optional, phone]
+- **phone** [Require if TNT, contact phone]
 - **instruction** [Optional, instruction]
 
 *Parcelport satchel list*
