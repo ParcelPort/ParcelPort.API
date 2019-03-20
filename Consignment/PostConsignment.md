@@ -1,4 +1,4 @@
-# Make consignment / Get consignment tracking number
+# Create a new consignment
 
 Allows third-party systems to make consignments and get consignment tracking
 numbers based on the passed shipping method id, sender's address, recipient's address

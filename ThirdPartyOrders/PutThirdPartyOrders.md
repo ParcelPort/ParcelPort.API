@@ -1,4 +1,4 @@
-# Make consignment / Get consignment tracking number
+# Import a list of third party orders
 
 Allows third-party systems to put a list of orders from their system
 
