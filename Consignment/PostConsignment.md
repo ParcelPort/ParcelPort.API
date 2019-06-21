@@ -15,7 +15,6 @@ auth string has been passed).
 * carrier_method_code [Require, value from quotes e.g. "MS"]
 * QuoteRequestID [Require, value from quotes]
 * authority_to_leave [Optional, 0 or 1, 1 if authority to leave]
-* pickup_option [Require, 0 or 1, 0 if booking now]
 * is_signature [Optional depend on Carrier's quotes, 0 or 1, 1 if need signature]
 * email_to_recipient [Require, 0 or 1, 1 if email to recipient]
 
@@ -63,6 +62,10 @@ auth string has been passed).
 - **contact_name** [Optional, contact name]
 - **phone** [Require if TNT, contact phone]
 - **instruction** [Optional, instruction]
+
+*Booking*
+- **pickup_option** [Require, 0 or 1, 0 if booking now]
+- **instructions** [Optional, city]
 
 *Parcelport satchel list*
 <table>
@@ -125,7 +128,6 @@ Bearer:bSEX9PltRH8uoHLmFdnt115OqEPPQTrrHpht6Bwq0yos9EW7o6vcBtrV23AF2TcuA8FJTabH_
   "carrier_id": "ph",
   "carrier_method_id": "phtd",
   "carrier_method_code": "TD",
-  "pickup_option": 1,
   "email_to_recipient": 1,
   "is_signature": 1,
   "QuoteRequestID": "ab98ccf7-655f-4e53-af99-395c65c962b3",
@@ -165,6 +167,9 @@ Bearer:bSEX9PltRH8uoHLmFdnt115OqEPPQTrrHpht6Bwq0yos9EW7o6vcBtrV23AF2TcuA8FJTabH_
     "address_street": "Pitt Street",
     "address_suburb": "Auckland Central"
   },
+  "booking":{
+      "pickup_option": 1,
+  }
 }
 ```
 **Responses**
