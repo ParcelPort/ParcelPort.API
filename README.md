@@ -24,7 +24,7 @@ POST https://api.parcelport.co.nz/token
 **Headers**
 Content-Type: application/json;
 
-**Body**
+**x-www-form-urlencoded**
 ``` json
 {
     username:"Test"
