@@ -64,4 +64,4 @@ Content-Type: application/json;
 - **[<code>GET</code> /api/1.0/tracking](Tracking/GetTracking.md)** Get tracking history of the consignment
 
 # Third Party orders
-- **[<code>PUT</code> /api/1.0/tracking](ThirdPartyOrders/PutThirdPartyOrders.md)** Put a list of third party orders
+- **[<code>PUT</code> /api/1.0/thirdpartyorders](ThirdPartyOrders/PutThirdPartyOrders.md)** Put a list of third party orders
