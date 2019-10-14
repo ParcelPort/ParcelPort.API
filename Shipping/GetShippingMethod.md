@@ -10,9 +10,10 @@ auth string has been passed).
 
 ## Required Parameters:
 *Parcels*
-- **length** - [Require Length of the parcel]
-- **width** - [Require Width of the parcel]
-- **height** - [Require Length of the parcel]
+- **length** - [Require Length of the parcel cm]
+- **width** - [Require Width of the parcel cm]
+- **height** - [Require Length of the parcel cm]
+- **weight** - [Require Weight of the parcel Kg]
 - **volumn** - [Optional Volumn of the parcel]
 - **kind** - [Optional default is 0, 1 if using satchel]
 - **group_id** - [Optional add the satchel code if using satchel]
