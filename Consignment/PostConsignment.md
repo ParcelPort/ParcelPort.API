@@ -19,9 +19,10 @@ auth string has been passed).
 * email_to_recipient [Require, 0 or 1, 1 if email to recipient]
 
 *Parcels*
-- **length** - [Require Length of the parcel]
-- **width** - [Require Width of the parcel]
-- **height** - [Require Length of the parcel]
+- **length** - [Require Length of the parcel cm]
+- **width** - [Require Width of the parcel cm]
+- **height** - [Require Length of the parcel cm]
+- **weight** - [Require Weight of the parcel Kg]
 - **volumn** - [Optional Volumn of the parcel]
 - **kind** - [Optional default is 0, 1 if using satchel]
 - **group_id** - [Optional add the satchel code if using satchel]
