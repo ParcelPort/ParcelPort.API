@@ -58,7 +58,7 @@ Content-Type: application/json;
 - **[<code>GET</code> /api/1.0/labels](Label/GetLabel.md)** Get a url of label(PDF)
 
 # Booking
-- **[<code>GET</code> /api/1.0/bookings](Booking/GetBooking.md)** Booking a pickup time
+- **[<code>POST</code> /api/1.0/bookings](Booking/PostBooking.md)** Booking a pickup time
 
 # Tracking
 - **[<code>GET</code> /api/1.0/tracking](Tracking/GetTracking.md)** Get tracking history of the consignment
