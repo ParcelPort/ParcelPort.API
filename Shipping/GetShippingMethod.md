@@ -14,7 +14,7 @@ auth string has been passed).
 - **width** - [Require Width of the parcel cm]
 - **height** - [Require Length of the parcel cm]
 - **weight** - [Require Weight of the parcel Kg]
-- **volumn** - [Optional Volumn of the parcel]
+- **volume** - [Optional Volume of the parcel]
 - **kind** - [Optional default is 0, 1 if using satchel]
 - **group_id** - [Optional add the satchel code if using satchel]
 - **cust_ref** - [Optional reference of the item]
