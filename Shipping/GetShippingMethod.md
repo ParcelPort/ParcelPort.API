@@ -111,7 +111,7 @@ Bearer:bSEX9PltRH8uoHLmFdnt115OqEPPQTrrHpht6Bwq0yos9EW7o6vcBtrV23AF2TcuA8FJTabH_
     }
   ],
   "DeliveryAddress": {
-    "address_body": "17 Witbrock Cresent",
+    "address_body": "17 Witbrock Crescent",
     "address_city": "Christchurch",
     "address_country": "NZ",
     "address_postcode": 8053,
@@ -211,12 +211,7 @@ The quoteRequestID need to be added in the request when you create a consignment
                                 "kind": null,
                                 "group_id": null,
                                 "cust_ref": null,
-                                "pack_name": null,
-                                "cost_net": 4.23,
-                                "cost_rural": 0,
-                                "cost_sat": 0,
-                                "cost_sig": 0,
-                                "cost": 4.23
+                                "pack_name": null
                             }
                         ],
                         "insurance": 2000,
