@@ -4,7 +4,7 @@ Allows third-party systems to make consignments and get consignment tracking
 numbers based on the passed shipping method id, sender's address, recipient's address
 and parcel(s)’ dimensions. 
 
-URL: https://api.parcelport.co.nz/api/1.0/consignment?client_id=110
+URL: https://api.parcelport.co.nz/api/1.0/consignment?client_id=786
 
 *This API can only be called after the API authentication is approved (the correct
 auth string has been passed). 
