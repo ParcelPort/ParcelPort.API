@@ -18,6 +18,7 @@ auth string has been passed).
 - **kind** - [Optional default is 0, 1 if using satchel]
 - **group_id** - [Optional add the satchel code if using satchel]
 - **cust_ref** - [Optional reference of the item]
+- **authority_to_leave** - [1 = Signature Not Required (ATL), 0 = Signature Required]
 - **insurance_required** - [Require if International, true / false]
 - **insured_value_amount** - [Require if International, insured value]
 - **currency** - [Optional, Default NZD, insured value currency]
