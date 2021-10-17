@@ -23,7 +23,7 @@ auth string has been passed).
 - **width** - [Require Width of the parcel cm]
 - **height** - [Require Length of the parcel cm]
 - **weight** - [Require Weight of the parcel Kg]
-- **volume** - [Optional Volume of the parcel]
+- **volume** - [Optional Volume of the parcel in m^3]
 - **kind** - [Optional default is 0, 1 if using satchel]
 - **group_id** - [Optional add the satchel code if using satchel]
 - **pack_name** - [Optional name of the package, eg "Satchel Letter DLE", displayed in Management & Tracking in Parcelport website interface]
