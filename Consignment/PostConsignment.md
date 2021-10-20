@@ -23,9 +23,10 @@ auth string has been passed).
 - **width** - [Require Width of the parcel cm]
 - **height** - [Require Length of the parcel cm]
 - **weight** - [Require Weight of the parcel Kg]
-- **volume** - [Optional Volume of the parcel]
+- **volume** - [Optional Volume of the parcel in m^3]
 - **kind** - [Optional default is 0, 1 if using satchel]
 - **group_id** - [Optional add the satchel code if using satchel]
+- **pack_name** - [Optional name of the package, eg "Satchel Letter DLE", displayed in Management & Tracking in Parcelport website interface]
 - **cust_ref** - [Optional reference of the item]
 - **insurance_required** - [Require if International, true / false]
 - **insured_value_amount** - [Require if International, insured value]
@@ -73,44 +74,55 @@ auth string has been passed).
   <tr>
     <td>Satchel name</td>
     <td>code</td>
+    <td>pack_name</td>
   </tr>
   <tr>
     <td>Satchel 140x230 DLE Letter Size</td>
     <td>dle</td>
+    <td>Satchel Letter DLE</td>
   </tr>
   <tr>
     <td>Satchel 150x210 Small A5 Size</td>
     <td>a5</td>
+    <td>Satchel Small A5</td>
   </tr>
   <tr>
     <td>Satchel Small A5 Bubble</td>
     <td>a5b</td>
+    <td>Satchel Small A5 Bubble</td>
   </tr>
   <tr>
     <td>Satchel 210x297 A4 Size</td>
     <td>a4</td>
+    <td>Satchel A4</td>
   </tr>
   <tr>
     <td>Satchel A4 Bubble</td>
     <td>a4b</td>
+    <td>Satchel A5 Bubble</td>
   </tr>
   <tr>
     <td>Satchel 280x350 Medium Size</td>
     <td>med</td>
+    <td>Satchel Medium</td>
   </tr>
   <tr>
     <td>Satchel Medium Bubble</td>
     <td>medb</td>
+    <td>Satchel Medium Bubble</td>
   </tr>
   <tr>
     <td>Satchel 297x420 Large A3 Size</td>
     <td>a3</td>
+    <td>Satchel Large A3</td>
   </tr>
   <tr>
     <td>Satchel 450x450 Extra Large A2 Size</td>
     <td>xl</td>
+    <td>Satchel Extra Large A2</td>
   </tr>
 </table>
+
 
 ## Example
 Request
