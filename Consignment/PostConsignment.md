@@ -114,7 +114,7 @@ auth string has been passed).
 
 ## Example
 Request
-PUT https://api.parcelport.co.nz/api/1.0/consignment?client_id=110
+PUT https://api.parcelport.co.nz/api/1.0/consignment?client_id=786
 
 **Headers**
 Content-Type: application/json;
